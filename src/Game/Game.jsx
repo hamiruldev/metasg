@@ -362,7 +362,7 @@ const Game = () => {
 
                         </Model>
 
-                        <Trigger
+                        {/* <Trigger
                             helper={true}
                             // pad={true}
                             x={-75.15}
@@ -376,9 +376,9 @@ const Game = () => {
                             onExit={() => {
                                 setVisible(false)
                             }}
-                        />
+                        /> */}
 
-                        {isVisible ? (
+                        {/* {isVisible ? (
                             <>
                                 <Suspense
                                     fallback={
@@ -431,7 +431,7 @@ const Game = () => {
                                     />
                                 </Suspense>
                             </>
-                        )}
+                        )} */}
 
                         <Group ref={textRef}
                             x={-54.47}

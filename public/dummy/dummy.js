@@ -71,7 +71,7 @@ const panelObj = [
         color: '#ffffff',
         textureRotation: 360,
         videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/1.-Singapore-Food-Festival-2022-by-Singapore-Tourism-Board.mp4',
+            '/video/1.SingaporeFoodFestival2022,bySingaporeTourismBoard.mp4',
     },
     {
         name: 'Object003',
@@ -80,7 +80,7 @@ const panelObj = [
         color: '#ffffff',
         textureRotation: 180,
         videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/2.-Virtual-PhD-Open-House-by-Singapore-Management-University.mp4',
+            '/video/2.VirtualPhDOpenHouse,bySingaporeManagementUniversity.mp4',
     },
     {
         name: 'Object004',
@@ -89,7 +89,7 @@ const panelObj = [
         color: '#ffffff',
         textureRotation: 360,
         videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/3.-Iloomination-Virtual-Showroom-by-NEA-Clean-Green-Singapore.mp4',
+            '/video/3.IloominationVirtualShowroom,byNEAClean&GreenSingapore.mp4',
     },
     {
         name: 'Object005',
@@ -97,8 +97,7 @@ const panelObj = [
         textureFlipY: true,
         color: '#ffffff',
         textureRotation: 180,
-        videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/4.-BYD-Virtual-Car-Showroom-by-ST-Engineering.mp4',
+        videoTexture: '/video/4.BYDVirtualCarShowroom,bySTEngineering.mp4',
     },
     {
         name: 'Object006',
@@ -107,7 +106,7 @@ const panelObj = [
         color: '#ffffff',
         textureRotation: 360,
         videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/5.-Curiography-Virtual-Exhibition-by-Singapore-Association-for-Mental-Health.mp4',
+            '/video/5.CuriographyVirtualExhibition,bySingaporeAssociationforMentalHealth.mp4',
     },
     {
         name: 'Object007',
@@ -116,7 +115,7 @@ const panelObj = [
         color: '#ffffff',
         textureRotation: 180,
         videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/6.-Environmental-Awareness-Campaign-by-Procter-Gamble.mp4',
+            '/video/6.EnvironmentalAwarenessCampaign,byProcter&Gamble.mp4',
     },
     {
         name: 'Object008',
@@ -125,7 +124,7 @@ const panelObj = [
         color: '#ffffff',
         textureRotation: 360,
         videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/7.-StarProperty-Awards-2022-Virtual-Showcase-by-Star-Media-Group.mp4',
+            '/video/7.StarPropertyAwards2022VirtualShowcase,byStarMediaGroup.mp4',
     },
     {
         name: 'Object009',
@@ -133,8 +132,7 @@ const panelObj = [
         textureFlipY: true,
         color: '#ffffff',
         textureRotation: 180,
-        videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/8.-Sabah-Virtual-Travel-Fair-by-Sabah-Tourism-Board.mp4',
+        videoTexture: '/video/8.SabahVirtualTravelFair,bySabahTourismBoard.mp4',
     },
     {
         name: 'Object010',
@@ -143,7 +141,7 @@ const panelObj = [
         color: '#ffffff',
         textureRotation: 360,
         videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/9.-Virtual-Exhibition-International-Conference-by-University-Science-Malaysia.mp4',
+            '/video/9.VirtualExhibition&InternationalConference,byUniversityScienceMalaysia.mp4',
     },
     {
         name: 'Object011',
@@ -151,8 +149,7 @@ const panelObj = [
         textureFlipY: true,
         color: '#ffffff',
         textureRotation: 180,
-        videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/10.-Virtual-Sales-Lobby-by-dr.-MCT®️-by-Kevolve™.mp4',
+        videoTexture: '/video/10.VirtualSalesLobbybydr.MCTbyKevolve.mp4',
     },
     {
         name: 'Object012',
@@ -161,7 +158,7 @@ const panelObj = [
         color: '#ffffff',
         textureRotation: 360,
         videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/11.-Virtual-Stationery-Store-by-Navneet-Education-Limited.mp4',
+            '/video/11.VirtualStationeryStore,byNavneetEducationLimited.mp4',
     },
     {
         name: 'Object013',
@@ -169,8 +166,7 @@ const panelObj = [
         textureFlipY: true,
         color: '#ffffff',
         textureRotation: 180,
-        videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/12.-Eden-Virtual-World-Edenlogy-Pte-Ltd.mp4',
+        videoTexture: '/video/12.EdenVirtualWorld,EdenlogyPteLtd.mp4',
     },
     {
         name: 'Object014',
@@ -179,7 +175,7 @@ const panelObj = [
         color: '#ffffff',
         textureRotation: 360,
         videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/13.-Kuala-Lumpur-Virtual-Photography-Festival-by-PCP-Publications.mp4',
+            '/video/13.KualaLumpurVirtualPhotographyFestival,byPCPPublications.mp4',
     },
     {
         name: 'Object015',
@@ -188,7 +184,7 @@ const panelObj = [
         color: '#ffffff',
         textureRotation: 180,
         videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/14.-Virtual-Angelica-Show-Unit-e-Launching-by-Johor-Land.mp4',
+            '/video/14.VirtualAngelicaShowUnite-Launching,byJohorLand.mp4',
     },
     {
         name: 'Object016',
@@ -197,7 +193,7 @@ const panelObj = [
         color: '#ffffff',
         textureRotation: 360,
         videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/15.-Horizon-Square-Virtual-Showcase-by-TopHills-Realty-M-Sdn.-Bhd..mp4',
+            '/video/15.HorizonSquareVirtualShowcase,byTopHillsRealty(M)Sdn.Bhd..mp4',
     },
     {
         name: 'Object017',
@@ -205,8 +201,7 @@ const panelObj = [
         textureFlipY: true,
         color: '#ffffff',
         textureRotation: 180,
-        videoTexture:
-            'https://360xp.co/ismartwebsite/wp-content/uploads/2022/10/17.-Virtual-Bistro-Bar-by-Meme-Bistro-Bar.mp4',
+        videoTexture: '/video/16.VirtualBazaar(Localised),ByTheRefectory.mp4',
     },
     {
         name: 'Object018',
@@ -214,8 +209,7 @@ const panelObj = [
         textureFlipY: false,
         color: '#ffffff',
         textureRotation: 360,
-        videoTexture:
-            'https://360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+        videoTexture: '/video/17.VirtualBistroBar,byMemeBistroBar.mp4',
     },
 ]
 
