@@ -1,0 +1,153 @@
+{
+        name: 'Object002',
+        bloom: true,
+        textureFlipY: false,
+        color: '#ffffff',
+        textureRotation: 360,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object003',
+        bloom: true,
+        textureFlipY: true,
+        color: '#ffffff',
+        textureRotation: 180,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object004',
+        bloom: true,
+        textureFlipY: false,
+        color: '#ffffff',
+        textureRotation: 360,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object005',
+        bloom: true,
+        textureFlipY: true,
+        color: '#ffffff',
+        textureRotation: 180,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object006',
+        bloom: true,
+        textureFlipY: false,
+        color: '#ffffff',
+        textureRotation: 360,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object007',
+        bloom: true,
+        textureFlipY: true,
+        color: '#ffffff',
+        textureRotation: 180,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object008',
+        bloom: true,
+        textureFlipY: false,
+        color: '#ffffff',
+        textureRotation: 360,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object009',
+        bloom: true,
+        textureFlipY: true,
+        color: '#ffffff',
+        textureRotation: 180,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object010',
+        bloom: true,
+        textureFlipY: false,
+        color: '#ffffff',
+        textureRotation: 360,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object011',
+        bloom: true,
+        textureFlipY: true,
+        color: '#ffffff',
+        textureRotation: 180,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object012',
+        bloom: true,
+        textureFlipY: false,
+        color: '#ffffff',
+        textureRotation: 180,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object013',
+        bloom: true,
+        textureFlipY: true,
+        color: '#ffffff',
+        textureRotation: 180,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object014',
+        bloom: true,
+        textureFlipY: false,
+        color: '#ffffff',
+        textureRotation: 180,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object015',
+        bloom: true,
+        textureFlipY: true,
+        color: '#ffffff',
+        textureRotation: 180,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object016',
+        bloom: true,
+        textureFlipY: false,
+        color: '#ffffff',
+        textureRotation: 180,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object017',
+        bloom: true,
+        textureFlipY: true,
+        color: '#ffffff',
+        textureRotation: 180,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},
+{
+        name: 'Object018',
+        bloom: true,
+        textureFlipY: false,
+        color: '#ffffff',
+        textureRotation: 180,
+        videoTexture:
+            'https: //360xp.co/metagallery/wp-content/uploads/2022/10/ISMART_-PROMO-VIDEO-30s-ISMART-VERSION.mp4',
+},

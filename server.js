@@ -43,7 +43,7 @@ ioServer.on('connection', (client) => {
         id: client?.id,
         animation: false,
         rotation: [0, 0, 0],
-        position: [randompoint[0], 10, randompoint[2]],
+        position: [randompoint[0], 50, randompoint[2]],
     }
 
     ioServer.sockets.emit('move', clients)

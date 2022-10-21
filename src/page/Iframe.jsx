@@ -9,7 +9,8 @@ const Iframe = ({ url }) => {
                 display: "block",
                 width: "-webkit-fill-available",
                 height: "-webkit-fill-available ",
-                border: "0px"
+                border: "0px",
+                backgroundColor: "black"
 
             }} src={url} />
         </>

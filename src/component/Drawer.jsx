@@ -1,23 +1,12 @@
 import * as React from 'react'
 import PropTypes from 'prop-types'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import CssBaseline from '@mui/material/CssBaseline'
-import Divider from '@mui/material/Divider'
-import Drawer from '@mui/material/Drawer'
-import IconButton from '@mui/material/IconButton'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemButton from '@mui/material/ListItemButton'
-import ListItemText from '@mui/material/ListItemText'
-import MenuIcon from '@mui/icons-material/Menu'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import { Chip, Collapse, Stack } from '@mui/material'
 
-import { StarBorder } from '@mui/icons-material'
-import { lists } from '../../public/dummy/dummy'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { Chip, Box, Collapse, AppBar, Stack, ListSubheader, Typography, Toolbar, ListItemText, ListItemButton, IconButton, ListItem, List, Divider, CssBaseline, Drawer } from '@mui/material'
+import { StarBorder, ExpandMore, ExpandLess, Menu as MenuIcon } from '@mui/icons-material'
+// import MenuIcon from '@mui/icons-material/Menu'
+
+import { lists } from '../../public/dummy/dummy'
 
 let dateNew = new Date()
 let date1 = dateNew.toLocaleTimeString()
@@ -51,8 +40,9 @@ const SubDrawer = () => {
             </Toolbar>
 
             <Divider />
-            <List
-            >
+
+            {/* <List>
+
                 {lists?.map(({ key, label, icon: Icon, items, pathname }) => {
 
                     return (
@@ -93,7 +83,7 @@ const SubDrawer = () => {
                                                 })}
                                             >
 
-                                                <ListItemText sx={{ color: 'white', pl: 2 }} inset primary={<>
+                                                <ListItemText sx={{ color: 'white', pl: 0 }} inset primary={<>
                                                     <Typography
                                                         sx={{ display: 'inline' }}
                                                         component="span"
@@ -115,23 +105,80 @@ const SubDrawer = () => {
                 }
 
                 )}
+
+            </List> */}
+
+            <List
+                sx={{ width: '100%', maxWidth: 280, bgcolor: 'transparent', color: "white" }}
+                component="nav"
+                aria-labelledby="nested-list-subheader"
+            >
+
+                <ListItemButton onClick={(() => {
+                    navigate(`../`)
+                })}
+                >
+                    <ListItemText primary="HOME" />
+                    {open ? <ExpandLess /> : <ExpandMore />}
+                </ListItemButton>
+
+
+                <Collapse in={open} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                        <ListItemButton
+                            onClick={(() => {
+                                navigate(`../everything`)
+                            })}
+
+                            sx={{ pl: 4 }}>
+                            <ListItemText primary="INDEX" />
+                        </ListItemButton>
+                    </List>
+                </Collapse>
+
+
+                <ListItemButton
+                    onClick={(() => {
+                        navigate(`../services`)
+                    })}
+                >
+                    <ListItemText primary="SERVICES" />
+                </ListItemButton>
+
+                <ListItemButton
+                // href={`/ services`}
+                >
+                    <ListItemText primary="SOUND ON / OFF" />
+                </ListItemButton>
+
+                <ListItemButton>
+                    <ListItemText primary={`SINGAPORE SGT ${date1}`} />
+                </ListItemButton>
+
+
+
             </List>
 
             <Divider />
 
-            <List
+            {/* <List
             >
                 {submenu?.map((text, index) => (
                     <ListItem key={text} disablePadding>
                         <ListItemButton>
-                            <ListItemText
-                                sx={{ color: 'white' }}
-                                primary={text}
-                            />
+                            <ListItemText sx={{ color: 'white', pl: 0 }} inset primary={<>
+                                <Typography
+                                    sx={{ display: 'inline' }}
+                                    component="span"
+                                    variant="body2"
+                                >
+                                    {text}
+                                </Typography>
+                            </>} />
                         </ListItemButton>
                     </ListItem>
                 ))}
-            </List>
+            </List> */}
         </>
     )
 }
@@ -156,7 +203,7 @@ function ResponsiveDrawer(props) {
             <AppBar
                 position="fixed"
                 sx={{
-                    width: { sm: `calc(100% - ${drawerWidth}px)` },
+                    width: { sm: `calc(100 % - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
                     bgcolor: 'text.primary',
                     display: { xs: 'block', md: 'none', lg: 'none' }, // Hidden on desktop
@@ -196,7 +243,9 @@ function ResponsiveDrawer(props) {
                         '& .MuiDrawer-paper': {
                             boxSizing: 'border-box',
                             width: drawerWidth,
+                            pt: 8
                         },
+
                     }}
                 >
                     <SubDrawer />
@@ -217,7 +266,7 @@ function ResponsiveDrawer(props) {
             </Box>
             {/* <Box
                 component="main"
-                sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
+                sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100 % - ${ drawerWidth }px)` } }}
             >
                 <Toolbar />
                 <Typography paragraph>
