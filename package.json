@@ -15,7 +15,6 @@
         "@mui/material": "^5.10.9",
         "express": "^4.17.1",
         "express-promise-router": "^4.1.0",
-        "gsap": "file:gsap-bonus.tgz",
         "http": "^0.0.1-security",
         "lingo3d-react": "^1.34.4",
         "prettier": "^2.4.1",

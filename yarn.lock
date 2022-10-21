@@ -1464,11 +1464,6 @@
   "resolved" "https://registry.npmjs.org/glsl-noise/-/glsl-noise-0.0.0.tgz"
   "version" "0.0.0"
 
-"gsap@file:gsap-bonus.tgz":
-  "integrity" "sha512-FhaMh9UmPu3VKbnZE1Pqg6Ryc+z1GdHeB8KWljp4JbSwPOeQUjgsqSb7twQlJmNPnt8KF6v8iNz0xvNOJ/xsrw=="
-  "resolved" "file:gsap-bonus.tgz"
-  "version" "3.11.3"
-
 "has-flag@^3.0.0":
   "integrity" "sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw=="
   "resolved" "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz"
