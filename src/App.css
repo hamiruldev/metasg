@@ -1,0 +1,44 @@
+#root {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: max-content;
+    color: white
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin-top: 5%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    top: -10px;
+}
+
+.online {
+    background-color: rgb(0, 255, 0);
+}
+
+
+.offline {
+    background-color: rgb(255, 0, 0);
+}
+
+.inActive {
+    border-color: transparent !important
+}
+
+.active {
+    border-color: white !important
+}
