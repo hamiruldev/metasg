@@ -42,3 +42,19 @@
 .active {
     border-color: white !important
 }
+
+.belowLogo{
+    color: white;
+    /* color: #ded6cb; */
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 16px!important;
+    font-family: 'Lay Grotesk';
+    
+}
+
+.MuiDrawer-docked .MuiDrawer-paper {
+    box-sizing: border-box;
+    width: 314px!important;
+}

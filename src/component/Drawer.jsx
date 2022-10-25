@@ -2,8 +2,30 @@ import * as React from 'react'
 import PropTypes from 'prop-types'
 
 import { useLocation, useNavigate } from 'react-router-dom'
-import { Chip, Box, Collapse, AppBar, Stack, ListSubheader, Typography, Toolbar, ListItemText, ListItemButton, IconButton, ListItem, List, Divider, CssBaseline, Drawer } from '@mui/material'
-import { StarBorder, ExpandMore, ExpandLess, Menu as MenuIcon } from '@mui/icons-material'
+import {
+    Chip,
+    Box,
+    Collapse,
+    AppBar,
+    Stack,
+    ListSubheader,
+    Typography,
+    Toolbar,
+    ListItemText,
+    ListItemButton,
+    IconButton,
+    ListItem,
+    List,
+    Divider,
+    CssBaseline,
+    Drawer,
+} from '@mui/material'
+import {
+    StarBorder,
+    ExpandMore,
+    ExpandLess,
+    Menu as MenuIcon,
+} from '@mui/icons-material'
 // import MenuIcon from '@mui/icons-material/Menu'
 
 import { lists } from '../../public/dummy/dummy'
@@ -16,16 +38,15 @@ const drawerWidth = 248
 const submenu = ['SOUND ON / OFF', `SINGAPORE SGT ${date1}`]
 
 const SubDrawer = () => {
-
     const [open, setOpen] = React.useState(true)
     const [menu, setMenu] = React.useState('1 HOME')
 
     const route = useLocation()
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
     const handleClick = (key) => {
-        setMenu(key);
-        open ? setOpen(!open) : setOpen(true);
+        setMenu(key)
+        open ? setOpen(!open) : setOpen(true)
     }
 
     return (
@@ -39,8 +60,14 @@ const SubDrawer = () => {
                 </Box>
             </Toolbar>
 
-            <Divider />
+            {/* <Divider /> */}
 
+            <List>
+                <ListItem className="belowLogo">
+                    SOFTWARE DEVELOPMENT <br />
+                    DIGITAL EXPERIENTIAL MARKETING
+                </ListItem>
+            </List>
             {/* <List>
 
                 {lists?.map(({ key, label, icon: Icon, items, pathname }) => {
@@ -109,40 +136,59 @@ const SubDrawer = () => {
             </List> */}
 
             <List
-                sx={{ width: '100%', maxWidth: 280, bgcolor: 'transparent', color: "white" }}
+                sx={{
+                    width: '100%',
+                    maxWidth: 350,
+                    bgcolor: 'transparent',
+                    color: 'white',
+                }}
                 component="nav"
                 aria-labelledby="nested-list-subheader"
             >
-
-                <ListItemButton onClick={(() => {
-                    navigate(`../`)
-                })}
+                <ListItemButton
+                    onClick={() => {
+                        navigate(`../`)
+                    }}
                 >
                     <ListItemText primary="HOME" />
                     {open ? <ExpandLess /> : <ExpandMore />}
                 </ListItemButton>
 
-
                 <Collapse in={open} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                         <ListItemButton
-                            onClick={(() => {
+                            onClick={() => {
                                 navigate(`../everything`)
-                            })}
-
-                            sx={{ pl: 4 }}>
+                            }}
+                            sx={{ pl: 4 }}
+                        >
                             <ListItemText primary="INDEX" />
                         </ListItemButton>
                     </List>
                 </Collapse>
 
-
                 <ListItemButton
-                    onClick={(() => {
+                    onClick={() => {
                         navigate(`../services`)
-                    })}
+                    }}
                 >
                     <ListItemText primary="SERVICES" />
+                </ListItemButton>
+
+                <ListItemButton
+                    onClick={() => {
+                        navigate(`../about-us`)
+                    }}
+                >
+                    <ListItemText primary="ABOUT US" />
+                </ListItemButton>
+
+                <ListItemButton
+                    onClick={() => {
+                        navigate(`../contact-us`)
+                    }}
+                >
+                    <ListItemText primary="CONTACT US" />
                 </ListItemButton>
 
                 <ListItemButton
@@ -154,9 +200,6 @@ const SubDrawer = () => {
                 <ListItemButton>
                     <ListItemText primary={`SINGAPORE SGT ${date1}`} />
                 </ListItemButton>
-
-
-
             </List>
 
             <Divider />
@@ -243,9 +286,8 @@ function ResponsiveDrawer(props) {
                         '& .MuiDrawer-paper': {
                             boxSizing: 'border-box',
                             width: drawerWidth,
-                            pt: 8
+                            pt: 8,
                         },
-
                     }}
                 >
                     <SubDrawer />
