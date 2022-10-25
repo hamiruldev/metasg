@@ -150,7 +150,7 @@ const SubDrawer = () => {
                         navigate(`../`)
                     }}
                 >
-                    <ListItemText primary="HOME" />
+                    <ListItemText primary="1 HOME" />
                     {open ? <ExpandLess /> : <ExpandMore />}
                 </ListItemButton>
 
@@ -162,7 +162,7 @@ const SubDrawer = () => {
                             }}
                             sx={{ pl: 4 }}
                         >
-                            <ListItemText primary="INDEX" />
+                            <ListItemText primary="1.1 INDEX" />
                         </ListItemButton>
                     </List>
                 </Collapse>
@@ -172,7 +172,7 @@ const SubDrawer = () => {
                         navigate(`../services`)
                     }}
                 >
-                    <ListItemText primary="SERVICES" />
+                    <ListItemText primary="2 SERVICES" />
                 </ListItemButton>
 
                 <ListItemButton
@@ -180,7 +180,7 @@ const SubDrawer = () => {
                         navigate(`../about-us`)
                     }}
                 >
-                    <ListItemText primary="ABOUT US" />
+                    <ListItemText primary="3 ABOUT" />
                 </ListItemButton>
 
                 <ListItemButton
@@ -188,17 +188,32 @@ const SubDrawer = () => {
                         navigate(`../contact-us`)
                     }}
                 >
-                    <ListItemText primary="CONTACT US" />
+                    <ListItemText primary="4 CONTACT" />
                 </ListItemButton>
 
                 <ListItemButton
                 // href={`/ services`}
                 >
-                    <ListItemText primary="SOUND ON / OFF" />
+                    <ListItemText>
+                        SOUND ON / OFF
+                        <br />
+                        {`SINGAPORE SGT ${date1}`}
+                    </ListItemText>
                 </ListItemButton>
 
                 <ListItemButton>
-                    <ListItemText primary={`SINGAPORE SGT ${date1}`} />
+                    <ListItemText>
+                        CONTACT US
+                        <br />
+                        info@i-smart.com.sg
+                    </ListItemText>
+                </ListItemButton>
+                <ListItemButton>
+                    <ListItemText>
+                        GENERAL LINE
+                        <br />
+                        +6567176778
+                    </ListItemText>
                 </ListItemButton>
             </List>
 
