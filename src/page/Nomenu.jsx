@@ -1,10 +1,8 @@
 import React from 'react'
-import ResponsiveDrawer from '../component/Drawer'
 
-const Iframe = ({ url }) => {
+const Nomenu = ({ url }) => {
     return (
         <>
-            <ResponsiveDrawer />
             <iframe
                 style={{
                     display: 'block',
@@ -19,4 +17,4 @@ const Iframe = ({ url }) => {
     )
 }
 
-export default Iframe
+export default Nomenu
