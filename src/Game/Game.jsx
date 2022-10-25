@@ -25,7 +25,7 @@ import {
     Find,
     AreaLight,
     Reflector,
-    SpotLight
+    SpotLight,
 } from 'lingo3d-react'
 
 import { io } from 'socket.io-client'
@@ -179,8 +179,8 @@ const Game = () => {
                         alignItems: 'center',
                         height: '100%',
                         textAlign: 'center',
-                        backgroundColor: "black",
-                        color: "white"
+                        backgroundColor: 'black',
+                        color: 'white',
                     }}
                 >
                     {`${Math.round(progress)}% `}
@@ -224,7 +224,7 @@ const Game = () => {
 
                         <AreaLight
                             x={-131.62}
-                            y={52.20}
+                            y={52.2}
                             z={-6166.49}
                             rotationX={46.66}
                             rotationY={-0.71}
@@ -232,9 +232,10 @@ const Game = () => {
                             scale={94.23}
                             scaleX={34.69}
                             scaleY={2.76}
-                            scaleZ={0.00}
+                            scaleZ={0.0}
                             // intensity={0.01}
-                            color="#ffbd46" />
+                            color="#ffbd46"
+                        />
 
                         <AreaLight
                             x={-1812.64}
@@ -246,9 +247,10 @@ const Game = () => {
                             scale={94.23}
                             scaleX={94.23}
                             scaleY={7.74}
-                            scaleZ={0.00}
+                            scaleZ={0.0}
                             // intensity={0.01}
-                            color="#ffbd46" />
+                            color="#ffbd46"
+                        />
 
                         <AreaLight
                             x={1605.44}
@@ -260,9 +262,10 @@ const Game = () => {
                             scale={94.23}
                             scaleX={94.23}
                             scaleY={7.74}
-                            scaleZ={0.00}
+                            scaleZ={0.0}
                             // intensity={0.01}
-                            color="#ffbd46" />
+                            color="#ffbd46"
+                        />
 
                         <Model
                             name="worldmap"
@@ -279,31 +282,33 @@ const Game = () => {
                             }}
                             src="maps/v2/map.glb"
                         >
-
                             {panelObj?.map((item, key) => {
-                                return (<>
-                                    <Find
-                                        key={key}
-                                        name={item?.name}
-                                        bloom={item?.bloom}
-                                        textureFlipY={item?.textureFlipY}
-                                        textureRotation={item?.textureRotation}
-                                        videoTexture={item?.videoTexture}
-                                        color={item?.color}
-                                        emissiveColor="#626262"
-                                        emissiveIntensity={0.3}
-                                        // onMouseOver={() => {
-                                        //     console.log('onMouseOver')
-                                        // }}
-                                        // onMouseOut={() => {
-                                        //     console.log('onMouseOut')
-                                        // }}
-                                        onClick={(e) => {
-                                            console.log('onClick')
-                                            movePlayer(e)
-                                        }}
-                                    >
-                                        {/* <HTML>
+                                return (
+                                    <>
+                                        <Find
+                                            key={key}
+                                            name={item?.name}
+                                            bloom={item?.bloom}
+                                            textureFlipY={item?.textureFlipY}
+                                            textureRotation={
+                                                item?.textureRotation
+                                            }
+                                            videoTexture={item?.videoTexture}
+                                            color={item?.color}
+                                            emissiveColor="#626262"
+                                            emissiveIntensity={0.3}
+                                            // onMouseOver={() => {
+                                            //     console.log('onMouseOver')
+                                            // }}
+                                            // onMouseOut={() => {
+                                            //     console.log('onMouseOut')
+                                            // }}
+                                            onClick={(e) => {
+                                                console.log('onClick')
+                                                movePlayer(e)
+                                            }}
+                                        >
+                                            {/* <HTML>
                                             <div>
                                                 <Button
                                                     sx={{
@@ -323,43 +328,30 @@ const Game = () => {
                                                 </Button>
                                             </div>
                                         </HTML> */}
-                                    </Find>
-                                </>)
+                                        </Find>
+                                    </>
+                                )
                             })}
 
+                            <Find bloom name="Line001" color="#ffffff" />
 
-                            <Find
-                                bloom
-                                name="Line001"
-                                color="#ffffff"
-                            />
+                            <Find bloom name="Box050" color="#ffffff" />
+                            <Find bloom name="Box057" color="#ffffff" />
 
-                            <Find
-                                bloom
-                                name="Box050"
-                                color="#ffffff"
-                            />
-                            <Find
-                                bloom
-                                name="Box057"
-                                color="#ffffff"
-                            />
-
-                            <Find
-                                bloom
-                                name="ceilinglight"
-                                color="#ffffff"
-                            />
+                            <Find bloom name="ceilinglight" color="#ffffff" />
 
                             <Find bloom name="Box050" color="#ffffff" />
                             <Find bloom name="Box057" color="#ffffff" />
                             <Find bloom name="Box058" color="#ffffff" />
 
                             {panelFrame?.map((item, key) => {
-                                <Find key={key} bloom name={item?.name} color="#ffffff" />
+                                ;<Find
+                                    key={key}
+                                    bloom
+                                    name={item?.name}
+                                    color="#ffffff"
+                                />
                             })}
-
-
                         </Model>
 
                         {/* <Trigger
@@ -433,12 +425,7 @@ const Game = () => {
                             </>
                         )} */}
 
-                        <Group ref={textRef}
-                            x={-54.47}
-                            z={3250.26}
-                            y={100.98}
-
-                        >
+                        <Group ref={textRef} x={-54.47} z={3250.26} y={100.98}>
                             <HTMLMesh>
                                 <HTML>
                                     <div className="status">
@@ -456,8 +443,12 @@ const Game = () => {
                                 x={-14}
                                 opacity={1}
                                 bloom={true}
-                                color={`${socket?.id == null ? '#ff0004' : '#00ff00'}`}
-                                emissiveColor={`${socket?.id == null ? '#ff0004' : '#00ff00'}`}
+                                color={`${
+                                    socket?.id == null ? '#ff0004' : '#00ff00'
+                                }`}
+                                emissiveColor={`${
+                                    socket?.id == null ? '#ff0004' : '#00ff00'
+                                }`}
                                 scale={0.03}
                             />
                         </Group>
@@ -481,17 +472,13 @@ const Game = () => {
                                 physics="character"
                                 width={50}
                                 depth={50}
-
                                 scale={1}
-
                                 x={-54.47}
                                 z={3250.26}
-                                y={50.30}
-
+                                y={50.3}
                                 rotationX={180}
                                 rotationY={-22.37}
                                 rotationZ={180}
-
                                 src="3dCharacter/new/character.fbx"
                                 animation={running ? 'running' : 'idle'}
                                 animations={{
@@ -630,9 +617,9 @@ const Game = () => {
                                                             {client?.id == null
                                                                 ? 'Connecting... .'
                                                                 : textLimit(
-                                                                    client?.id,
-                                                                    9
-                                                                )}
+                                                                      client?.id,
+                                                                      9
+                                                                  )}
                                                         </span>
                                                     </div>
                                                 </HTML>
@@ -643,8 +630,16 @@ const Game = () => {
                                                 x={-14}
                                                 opacity={1}
                                                 bloom={true}
-                                                color={`${client?.id == null ? '#ff0004' : '#00ff00'}`}
-                                                emissiveColor={`${client?.id == null ? '#ff0004' : '#00ff00'}`}
+                                                color={`${
+                                                    client?.id == null
+                                                        ? '#ff0004'
+                                                        : '#00ff00'
+                                                }`}
+                                                emissiveColor={`${
+                                                    client?.id == null
+                                                        ? '#ff0004'
+                                                        : '#00ff00'
+                                                }`}
                                                 scale={0.03}
                                             />
                                         </Group>
@@ -657,22 +652,18 @@ const Game = () => {
                                             physics="character"
                                             width={50}
                                             depth={50}
-
                                             scale={1}
-
                                             animation={
                                                 client?.id == remoteData?.id &&
-                                                    client?.animation
+                                                client?.animation
                                                     ? 'running'
                                                     : 'idle'
                                             }
-
-
                                             src="3dCharacter/new/character.fbx"
-
                                             animations={{
                                                 idle: '3dCharacter/new/BreathingIdle.fbx',
-                                                running: '3dCharacter/new/Running.fbx',
+                                                running:
+                                                    '3dCharacter/new/Running.fbx',
                                             }}
                                         />
                                     </>
