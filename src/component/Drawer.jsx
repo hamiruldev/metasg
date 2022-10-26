@@ -45,13 +45,11 @@ const SubDrawer = () => {
     const [openHome, setOpenHome] = React.useState(true)
     const handleClickHome = () => {
         setOpenHome(!openHome)
-        setOpenServices(openServices)
     }
 
     //Services
     const [openServices, setOpenServices] = React.useState(false)
     const handleClickServices = () => {
-        setOpenHome(openHome)
         setOpenServices(!openServices)
     }
 

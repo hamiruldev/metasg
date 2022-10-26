@@ -68,7 +68,7 @@ const panelObj = [
         name: 'Object002',
         bloom: true,
         textureFlipY: false,
-        color: '#ffffff',
+        color: 'ffffff',
         textureRotation: 360,
         videoTexture:
             '/video/1.SingaporeFoodFestival2022,bySingaporeTourismBoard.mp4',
@@ -77,7 +77,7 @@ const panelObj = [
         name: 'Object003',
         bloom: true,
         textureFlipY: true,
-        color: '#ffffff',
+        color: 'rgba(255,255,255,0.3)',
         textureRotation: 180,
         videoTexture:
             '/video/2.VirtualPhDOpenHouse,bySingaporeManagementUniversity.mp4',
