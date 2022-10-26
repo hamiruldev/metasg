@@ -38,16 +38,30 @@ const drawerWidth = 248
 const submenu = ['SOUND ON / OFF', `SINGAPORE SGT ${date1}`]
 
 const SubDrawer = () => {
-    const [open, setOpen] = React.useState(true)
-    const [menu, setMenu] = React.useState('1 HOME')
+    // const [open, setOpen] = React.useState(true)
+    // const [menu, setMenu] = React.useState('1 HOME')
+
+    //Home & Index
+    const [openHome, setOpenHome] = React.useState(true)
+    const handleClickHome = () => {
+        setOpenHome(!openHome)
+        setOpenServices(openServices)
+    }
+
+    //Services
+    const [openServices, setOpenServices] = React.useState(false)
+    const handleClickServices = () => {
+        setOpenHome(openHome)
+        setOpenServices(!openServices)
+    }
 
     const route = useLocation()
     const navigate = useNavigate()
 
-    const handleClick = (key) => {
-        setMenu(key)
-        open ? setOpen(!open) : setOpen(true)
-    }
+    // const handleClick = (key) => {
+    //     setMenu(key)
+    //     open ? setOpen(!open) : setOpen(true)
+    // }
 
     return (
         <>
@@ -146,15 +160,16 @@ const SubDrawer = () => {
                 aria-labelledby="nested-list-subheader"
             >
                 <ListItemButton
-                    onClick={() => {
-                        navigate(`../`)
-                    }}
+                    // onClick={() => {
+                    //     navigate(`../`)
+                    // }}
+                    onClick={handleClickHome}
                 >
                     <ListItemText primary="1 HOME" />
-                    {open ? <ExpandLess /> : <ExpandMore />}
+                    {openHome ? <ExpandLess /> : <ExpandMore />}
                 </ListItemButton>
 
-                <Collapse in={open} timeout="auto" unmountOnExit>
+                <Collapse in={openHome} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                         <ListItemButton
                             onClick={() => {
@@ -168,12 +183,83 @@ const SubDrawer = () => {
                 </Collapse>
 
                 <ListItemButton
-                    onClick={() => {
-                        navigate(`../services`)
-                    }}
+                    // onClick={() => {
+                    //     navigate(`../services`)
+                    // }}
+                    onClick={handleClickServices}
                 >
                     <ListItemText primary="2 SERVICES" />
+                    {openServices ? <ExpandLess /> : <ExpandMore />}
                 </ListItemButton>
+
+                <Collapse in={openServices} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                        <ListItemButton
+                            onClick={() => {
+                                navigate(`../services`)
+                            }}
+                            sx={{ pl: 4 }}
+                        >
+                            <ListItemText primary="2.1 SOFTWARE DEVELOPMENT" />
+                        </ListItemButton>
+                        <ListItemButton
+                            onClick={() => {
+                                navigate(`../services`)
+                            }}
+                            sx={{ pl: 4 }}
+                        >
+                            <ListItemText primary="2.2 ECOMMERCE" />
+                        </ListItemButton>
+                        <ListItemButton
+                            onClick={() => {
+                                navigate(`../services`)
+                            }}
+                            sx={{ pl: 4 }}
+                        >
+                            <ListItemText primary="2.3 WEBSITE DESIGN" />
+                        </ListItemButton>
+                        <ListItemButton
+                            onClick={() => {
+                                navigate(`../services`)
+                            }}
+                            sx={{ pl: 4 }}
+                        >
+                            <ListItemText primary="2.4 WEB MINI GAME" />
+                        </ListItemButton>
+                        <ListItemButton
+                            onClick={() => {
+                                navigate(`../services`)
+                            }}
+                            sx={{ pl: 4 }}
+                        >
+                            <ListItemText primary="2.5 VIRTUAL EVENT" />
+                        </ListItemButton>
+                        <ListItemButton
+                            onClick={() => {
+                                navigate(`../services`)
+                            }}
+                            sx={{ pl: 4 }}
+                        >
+                            <ListItemText primary="2.6 ONLINE SHOWROOM" />
+                        </ListItemButton>
+                        <ListItemButton
+                            onClick={() => {
+                                navigate(`../services`)
+                            }}
+                            sx={{ pl: 4 }}
+                        >
+                            <ListItemText primary="2.7 3D VISUALIZATION" />
+                        </ListItemButton>
+                        <ListItemButton
+                            onClick={() => {
+                                navigate(`../services`)
+                            }}
+                            sx={{ pl: 4 }}
+                        >
+                            <ListItemText primary="2.8 METAVERSE" />
+                        </ListItemButton>
+                    </List>
+                </Collapse>
 
                 <ListItemButton
                     onClick={() => {

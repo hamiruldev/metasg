@@ -12,6 +12,7 @@ import {
     usePreload,
     useWindowSize,
     World,
+    Joystick,
     LingoEditor,
     HTMLMesh,
     Water,
@@ -165,6 +166,7 @@ const Game = () => {
     useEffect(() => {
         socket &&
             socket?.on('move', (clients) => {
+                // Comment by Basiir
                 setServer(serverPlayerOnly(Object?.values(clients), socket.id))
             })
     }, [socket])
@@ -549,6 +551,9 @@ const Game = () => {
                             </>
                         )}
 
+                        {/*
+                        Basiir comment temporary
+                        */}
                         {server != [] &&
                             server?.map((client, key) => {
                                 if (
