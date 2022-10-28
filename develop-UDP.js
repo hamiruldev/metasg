@@ -60,13 +60,13 @@ let clients = {}
 
 // have to user server instead of app
 server.listen(4444, () => {
-    console.log('express is on http://localhost:4444')
+    //console.log('express is on http://localhost:4444')
 })
 
 // Socket app msgs
 ioServer.onConnection((channel) => {
     channel.onDisconnect(() => {
-        console.log(`${channel.id} got disconnected`)
+        // console.log(`${channel.id} got disconnected`)
 
         //Delete this client from the object
         delete clients[channel.id]
@@ -79,9 +79,9 @@ ioServer.onConnection((channel) => {
         ioServer.emit('move')
     })
 
-    console.log(
-        `User ${channel.id} connected, there are currently ${channel?.webrtcConnection?.connections?.size} users connected`
-    )
+    // console.log(
+    //     `User ${channel.id} connected, there are currently ${channel?.webrtcConnection?.connections?.size} users connected`
+    // )
 
     const randompoint = randomSpherePoint(-150, 150, 50, 300)
 

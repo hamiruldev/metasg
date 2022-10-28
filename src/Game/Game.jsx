@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, Suspense } from 'react'
+import _uniqueId from 'lodash/uniqueId'
 
 import {
     Cylinder,
@@ -29,56 +30,59 @@ import {
     SpotLight,
 } from 'lingo3d-react'
 
-import { io } from 'socket.io-client'
+// Basiir comment
+// import { io } from 'socket.io-client'
 
-import { Button, CssBaseline } from '@mui/material'
-import TouchAppTwoToneIcon from '@mui/icons-material/TouchAppTwoTone'
+import { Button, CssBaseline, CircularProgress } from '@mui/material'
+// import TouchAppTwoToneIcon from '@mui/icons-material/TouchAppTwoTone'
 
 import ResponsiveDrawer from '../component/Drawer'
-import { serverPlayerOnly, textLimit } from '../helper'
+// import { serverPlayerOnly, textLimit } from '../helper'
 import { panelFrame, panelObj } from '../../public/dummy/dummy'
+
+const viteBaseUrl = import.meta.env.VITE_BASE_URL
 
 const Game = () => {
     const progress = usePreload(
         [
-            'maps/v2/map.glb',
-            '3dCharacter/character.fbx',
-            '3dCharacter/BreathingIdle.fbx',
-            '3dCharacter/Running.fbx',
-            'skyBox/sky.jpg',
+            `${viteBaseUrl}/maps/v2/map.glb`,
+            `${viteBaseUrl}/3dCharacter/new/character.fbx`,
+            `${viteBaseUrl}/3dCharacter/new/BreathingIdle.fbx`,
+            `${viteBaseUrl}/3dCharacter/new/Running.fbx`,
+            `${viteBaseUrl}/skyBox/sky.jpg`,
         ],
         15555900
     )
 
-    const [socketCon, setSocketCon] = useState(false)
-    const [socket, setSocket] = useState(null)
-    const [server, setServer] = useState()
-    const [running, setRunning] = useState(false)
-    const [isVisible, setVisible] = useState(false)
+    // Hamirul
+    // const [socketCon, setSocketCon] = useState(false)
+    // const [socket, setSocket] = useState(null)
+    // const [server, setServer] = useState()
+    // const [running, setRunning] = useState(false)
+    // const [isVisible, setVisible] = useState(false)
+    //const [arrowPosition, setArrowPosition] = useState({x: 0,
+    //     y: 0,
+    //     z: 0,
+    // })
 
-    const [arrowPosition, setArrowPosition] = useState({
-        x: 0,
-        y: 0,
-        z: 0,
-    })
+    //Basiir
+    const [running, setRunning] = useState(false)
+    const [arrowPosition, setArrowPosition] = useState({ x: 0, y: 0, z: 0 })
+    const [idTv] = useState(_uniqueId('tvkey-'))
+    const [idpf] = useState(_uniqueId('pfkey-'))
+    const [idrpf] = useState(_uniqueId('rpfkey-'))
 
     //PLAYER
     const dummyRef = useRef(null)
     const textRef = useRef(null)
-    const remoteTextRef = useRef(null)
 
     const remoteRef = useRef(null)
     const boothRef = useRef(null)
-    const refWorld = useRef(null)
-    const spaceFighterRef = useRef(null)
-
-    const remoteData = remoteRef?.current
-    const remoteTextData = remoteTextRef?.current
 
     const { width } = useWindowSize()
 
     const handleClick = (ev) => {
-        const { id } = socket
+        // const { id } = socket
         const dummy = dummyRef.current
         const textName = textRef.current
 
@@ -94,26 +98,13 @@ const Game = () => {
 
         setRunning(true)
 
-        socket?.emit('move', {
-            id: id,
-            rotation: [dummy.rotationX, dummy.rotationY, dummy.rotationZ],
-            position: Object.values(ev.point),
-            animation: true,
-        })
-
         dummy.onMoveToEnd = () => {
             setRunning(false)
-            socket?.emit('move', {
-                id: id,
-                rotation: [dummy.rotationX, dummy.rotationY, dummy.rotationZ],
-                position: Object.values(ev.point),
-                animation: false,
-            })
         }
     }
 
     const movePlayer = (ev) => {
-        const { id } = socket
+        // const { id } = socket
         const dummy = dummyRef.current
         const textName = textRef.current
 
@@ -129,47 +120,10 @@ const Game = () => {
 
         setRunning(true)
 
-        socket?.emit('move', {
-            id: id,
-            rotation: [dummy.rotationX, dummy.rotationY, dummy.rotationZ],
-            position: Object.values(ev.point),
-            animation: true,
-        })
-
         dummy.onMoveToEnd = () => {
             setRunning(false)
-            socket?.emit('move', {
-                id: id,
-                rotation: [dummy.rotationX, dummy.rotationY, dummy.rotationZ],
-                position: Object.values(ev.point),
-                animation: false,
-            })
         }
     }
-
-    useEffect(() => {
-        setTimeout(() => {
-            setSocketCon(true)
-        }, 7000)
-        // On mount initialize the socket connection
-        if (socketCon == true) {
-            socket == null ? setSocket(io('')) : socket.disconnect()
-        }
-
-        return () => {
-            if (socket) {
-                socket.disconnect()
-            }
-        }
-    }, [socketCon])
-
-    useEffect(() => {
-        socket &&
-            socket?.on('move', (clients) => {
-                // Comment by Basiir
-                setServer(serverPlayerOnly(Object?.values(clients), socket.id))
-            })
-    }, [socket])
 
     return (
         <>
@@ -185,9 +139,12 @@ const Game = () => {
                         color: 'white',
                     }}
                 >
-                    {`${Math.round(progress)}% `}
+                    {/* {`${Math.round(progress)}% `} */}
+
+                    <img src={`${viteBaseUrl}/preloader/preloader.gif`} />
                     <br />
-                    loading...
+                    {/* <CircularProgress variant="determinate" value={progress} /> */}
+                    {/* loading... */}
                 </div>
             )}
 
@@ -196,7 +153,6 @@ const Game = () => {
                     <World>
                         {/* <LingoEditor /> */}
                         {/* <Environment /> */}
-                        {/* <SkyLight intensity={0.1} /> */}
                         <UI>
                             <ResponsiveDrawer />
                         </UI>
@@ -211,18 +167,6 @@ const Game = () => {
                                 pixelRatio={5}
                             />
                         </Suspense>
-
-                        {/* <Reflector
-                            x={-106.08}
-                            y={-216.73}
-                            z={-1207.92}
-                            rotationX={-90.00}
-                            scale={35.67}
-                            scaleX={35.67}
-                            scaleY={102.31}
-                            opacityFactor={0.40}
-                            reflection
-                            mirror={1.50} /> */}
 
                         <AreaLight
                             x={-131.62}
@@ -282,55 +226,29 @@ const Game = () => {
                             onClick={(ev) => {
                                 handleClick(ev)
                             }}
-                            src="maps/v2/map.glb"
+                            src={`${viteBaseUrl}/maps/v2/map.glb`}
                         >
-                            {panelObj?.map((item, key) => {
+                            {panelObj?.map((item, idTv) => {
                                 return (
                                     <>
                                         <Find
-                                            key={key}
+                                            key={idTv}
                                             name={item?.name}
                                             bloom={item?.bloom}
+                                            // texture={item?.texture}
+                                            // texture={`${viteBaseUrl}/${item?.texture}`}
                                             textureFlipY={item?.textureFlipY}
                                             textureRotation={
                                                 item?.textureRotation
                                             }
-                                            videoTexture={item?.videoTexture}
+                                            videoTexture={`${viteBaseUrl}/${item?.videoTexture}`}
                                             color={item?.color}
                                             emissiveColor="#626262"
                                             emissiveIntensity={0.3}
-                                            // onMouseOver={() => {
-                                            //     console.log('onMouseOver')
-                                            // }}
-                                            // onMouseOut={() => {
-                                            //     console.log('onMouseOut')
-                                            // }}
                                             onClick={(e) => {
-                                                console.log('onClick')
                                                 movePlayer(e)
                                             }}
-                                        >
-                                            {/* <HTML>
-                                            <div>
-                                                <Button
-                                                    sx={{
-                                                        color: "white",
-                                                        px: 1,
-                                                        background: " rgba( 255, 255, 255, 0.25 )",
-                                                        boxShadow: "0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
-                                                        backdropFilter: "blur( 4px )",
-                                                        borderRadius: "10px",
-                                                        border: "1px solid rgba( 255, 255, 255, 0.18 )",
-                                                    }}
-                                                    variant="text"
-                                                    size="small"
-                                                    endIcon={<TouchAppTwoToneIcon />}
-                                                >
-                                                    Click
-                                                </Button>
-                                            </div>
-                                        </HTML> */}
-                                        </Find>
+                                        ></Find>
                                     </>
                                 )
                             })}
@@ -346,114 +264,15 @@ const Game = () => {
                             <Find bloom name="Box057" color="#ffffff" />
                             <Find bloom name="Box058" color="#ffffff" />
 
-                            {panelFrame?.map((item, key) => {
+                            {panelFrame?.map((item, idpf) => {
                                 ;<Find
-                                    key={key}
+                                    key={idpf}
                                     bloom
                                     name={item?.name}
                                     color="#ffffff"
                                 />
                             })}
                         </Model>
-
-                        {/* <Trigger
-                            helper={true}
-                            // pad={true}
-                            x={-75.15}
-                            y={-287.29}
-                            z={-984.78}
-                            targetIds="player"
-                            radius={1000.0}
-                            onEnter={() => {
-                                setVisible(true)
-                            }}
-                            onExit={() => {
-                                setVisible(false)
-                            }}
-                        /> */}
-
-                        {/* {isVisible ? (
-                            <>
-                                <Suspense
-                                    fallback={
-                                        <Cube
-                                            color="black"
-                                            x={-39.44}
-                                            y={-109.37}
-                                            z={-109.37}
-                                        />
-                                    }
-                                >
-                                    <Model
-                                        ref={spaceFighterRef}
-                                        physics="map"
-                                        width={245.36}
-                                        depth={245.36}
-                                        scaleX={10}
-                                        scaleY={20}
-                                        scaleZ={20}
-                                        x={-137.75}
-                                        y={-213.67}
-                                        z={-1113.66}
-                                        scale={2}
-                                        animation={'Scene'}
-                                        src="npc/spaceFighter.glb"
-                                    />
-                                </Suspense>
-                            </>
-                        ) : (
-                            <>
-                                <Suspense
-                                    fallback={
-                                        <Sphere
-                                            color="blue"
-                                            x={-39.44}
-                                            y={-109.37}
-                                            z={-109.37}
-                                        />
-                                    }
-                                >
-                                    <Sphere
-                                        onClick={(ev) => {
-                                            movePlayer(ev)
-                                        }}
-                                        opacity={1}
-                                        color="red"
-                                        x={-39.44}
-                                        y={-109.37}
-                                        z={-109.37}
-                                    />
-                                </Suspense>
-                            </>
-                        )} */}
-
-                        <Group ref={textRef} x={-54.47} z={3250.26} y={100.98}>
-                            <HTMLMesh>
-                                <HTML>
-                                    <div className="status">
-                                        <span style={{ fontSize: '12px' }}>
-                                            {socket?.id == null
-                                                ? 'Connecting... .'
-                                                : textLimit(socket?.id, 9)}
-                                        </span>
-                                    </div>
-                                </HTML>
-                            </HTMLMesh>
-
-                            <Sphere
-                                y={-10}
-                                x={-14}
-                                opacity={1}
-                                bloom={true}
-                                color={`${
-                                    socket?.id == null ? '#ff0004' : '#00ff00'
-                                }`}
-                                emissiveColor={`${
-                                    socket?.id == null ? '#ff0004' : '#00ff00'
-                                }`}
-                                scale={0.03}
-                            />
-                        </Group>
 
                         <ThirdPersonCamera
                             enableDamping
@@ -481,11 +300,11 @@ const Game = () => {
                                 rotationX={180}
                                 rotationY={-22.37}
                                 rotationZ={180}
-                                src="3dCharacter/new/character.fbx"
+                                src={`${viteBaseUrl}/3dCharacter/new/character.fbx`}
                                 animation={running ? 'running' : 'idle'}
                                 animations={{
-                                    idle: '3dCharacter/new/BreathingIdle.fbx',
-                                    running: '3dCharacter/new/Running.fbx',
+                                    idle: `${viteBaseUrl}/3dCharacter/new/BreathingIdle.fbx`,
+                                    running: `${viteBaseUrl}/3dCharacter/new/Running.fbx`,
                                 }}
                             />
                         </ThirdPersonCamera>
@@ -551,129 +370,13 @@ const Game = () => {
                             </>
                         )}
 
-                        {/*
-                        Basiir comment temporary
-                        */}
-                        {server != [] &&
-                            server?.map((client, key) => {
-                                if (
-                                    client?.animation == true &&
-                                    remoteData !== null &&
-                                    remoteTextData !== null &&
-                                    client?.id == remoteData?.id
-                                ) {
-                                    remoteData.lookTo(
-                                        client?.position[0],
-                                        undefined,
-                                        client?.position[2],
-                                        0.1
-                                    )
-                                    remoteData.moveTo(
-                                        client?.position[0],
-                                        undefined,
-                                        client?.position[2],
-                                        5
-                                    )
-
-                                    remoteTextData.lookTo(
-                                        client?.position[0],
-                                        undefined,
-                                        client?.position[2],
-                                        0.1
-                                    )
-                                    remoteTextData.moveTo(
-                                        client?.position[0],
-                                        undefined,
-                                        client?.position[2],
-                                        5
-                                    )
-
-                                    remoteRef.current.onMoveToEnd = () => {
-                                        socket?.emit('move', {
-                                            id: client?.id,
-                                            animation: false,
-                                            rotation: Object.values(
-                                                client?.rotation
-                                            ),
-                                            position: Object.values(
-                                                client?.position
-                                            ),
-                                        })
-                                    }
-                                }
-
-                                return (
-                                    <>
-                                        <Group
-                                            ref={remoteTextRef}
-                                            y={5}
-                                            key={key}
-                                            id={client?.id}
-                                        >
-                                            <HTMLMesh>
-                                                <HTML>
-                                                    <div className="status">
-                                                        <span
-                                                            style={{
-                                                                fontSize:
-                                                                    '12px',
-                                                            }}
-                                                        >
-                                                            {client?.id == null
-                                                                ? 'Connecting... .'
-                                                                : textLimit(
-                                                                      client?.id,
-                                                                      9
-                                                                  )}
-                                                        </span>
-                                                    </div>
-                                                </HTML>
-                                            </HTMLMesh>
-
-                                            <Sphere
-                                                y={100.98}
-                                                x={-14}
-                                                opacity={1}
-                                                bloom={true}
-                                                color={`${
-                                                    client?.id == null
-                                                        ? '#ff0004'
-                                                        : '#00ff00'
-                                                }`}
-                                                emissiveColor={`${
-                                                    client?.id == null
-                                                        ? '#ff0004'
-                                                        : '#00ff00'
-                                                }`}
-                                                scale={0.03}
-                                            />
-                                        </Group>
-
-                                        <Dummy
-                                            key={key}
-                                            id={client?.id}
-                                            ref={remoteRef}
-                                            gravity={true}
-                                            physics="character"
-                                            width={50}
-                                            depth={50}
-                                            scale={1}
-                                            animation={
-                                                client?.id == remoteData?.id &&
-                                                client?.animation
-                                                    ? 'running'
-                                                    : 'idle'
-                                            }
-                                            src="3dCharacter/new/character.fbx"
-                                            animations={{
-                                                idle: '3dCharacter/new/BreathingIdle.fbx',
-                                                running:
-                                                    '3dCharacter/new/Running.fbx',
-                                            }}
-                                        />
-                                    </>
-                                )
-                            })}
+                        {panelFrame?.map((item, idrpf) => {
+                            <Find
+                                key={idrpf}
+                                name={item?.name}
+                                color="#ffffff"
+                            />
+                        })}
                     </World>
                 </>
             )}

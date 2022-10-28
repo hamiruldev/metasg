@@ -140,7 +140,7 @@ function App() {
         setServer(serverPlayerOnly(Object?.values(clients), channel?.id))
     })
 
-    console.log('window port', location?.port)
+    //console.log('window port', location?.port)
 
     return (
         <>
@@ -165,7 +165,12 @@ function App() {
                     <World>
                         {/* <LingoEditor /> */}
                         <SkyLight intensity={0.1} />
-                        <AmbientLight x={55.17} y={-124.47} z={-927.94} color={"#a4ffef"} />
+                        <AmbientLight
+                            x={55.17}
+                            y={-124.47}
+                            z={-927.94}
+                            color={'#a4ffef'}
+                        />
                         {/* <Environment /> */}
 
                         <Water
@@ -189,7 +194,6 @@ function App() {
                             ref={boothRef}
                             physics="map"
                             bloom
-
                             width={245.36}
                             depth={245.36}
                             x={-149.17}
@@ -291,8 +295,9 @@ function App() {
                                 x={-14}
                                 opacity={1}
                                 bloom={true}
-                                color={`${channel.id == null ? 'red' : 'green'
-                                    }`}
+                                color={`${
+                                    channel.id == null ? 'red' : 'green'
+                                }`}
                                 scale={0.03}
                             />
                         </Group>
@@ -314,7 +319,6 @@ function App() {
                                 id="player"
                                 name="player"
                                 physics="character"
-
                                 width={50}
                                 depth={50}
                                 scale={3}
@@ -446,7 +450,7 @@ function App() {
                                         <Group
                                             ref={remoteTextRef}
                                             y={-180}
-                                            key={key}
+                                            // key={key}
                                             id={client?.id}
                                         >
                                             <HTMLMesh>
@@ -461,9 +465,9 @@ function App() {
                                                             {client?.id == null
                                                                 ? 'Connecting... .'
                                                                 : textLimit(
-                                                                    client?.id,
-                                                                    9
-                                                                )}
+                                                                      client?.id,
+                                                                      9
+                                                                  )}
                                                         </span>
                                                     </div>
                                                 </HTML>
@@ -474,16 +478,17 @@ function App() {
                                                 x={-14}
                                                 opacity={1}
                                                 bloom={true}
-                                                color={`${client?.id == null
-                                                    ? 'red'
-                                                    : 'green'
-                                                    }`}
+                                                color={`${
+                                                    client?.id == null
+                                                        ? 'red'
+                                                        : 'green'
+                                                }`}
                                                 scale={0.03}
                                             />
                                         </Group>
 
                                         <Dummy
-                                            key={key}
+                                            // key={key}
                                             id={client?.id}
                                             ref={remoteRef}
                                             gravity={true}
@@ -494,7 +499,7 @@ function App() {
                                             src={'3dCharacter/character.fbx'}
                                             animation={
                                                 client?.id == remoteData?.id &&
-                                                    client?.animation
+                                                client?.animation
                                                     ? 'running'
                                                     : 'idle'
                                             }

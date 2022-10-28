@@ -7,20 +7,20 @@ const channel = geckos({ port: null, authorization: 'UNIQUE_TOKEN' })
 
 channel.onConnect((error) => {
     if (error) {
-        console.error(error.message)
-        console.log('Status : ', error.status)
-        console.log('StatusText: ', error.statusText)
+        // console.error(error.message)
+        // console.log('Status : ', error.status)
+        // console.log('StatusText: ', error.statusText)
         return
     } else {
-        console.log('You are connected', channel.id)
+        // console.log('You are connected', channel.id)
     }
 
     channel.onDisconnect(() => {
-        console.log('You got disconnected')
+        // console.log('You got disconnected')
     })
 
     channel.onRaw((rawMessage) => {
-        console.log('rawMessage', rawMessage)
+        // console.log('rawMessage', rawMessage)
     })
 
     // sending a raw message

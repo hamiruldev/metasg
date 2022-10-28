@@ -55,13 +55,13 @@ let clients = {}
 
 const PORT = process.env.PORT || 4444
 server.listen(PORT, function () {
-    console.log('Server is now running on port ' + PORT)
+    // console.log('Server is now running on port ' + PORT)
 })
 
 // Socket app msgs
 ioServer.onConnection((channel) => {
     channel.onDisconnect(() => {
-        console.log(`${channel.id} got disconnected`)
+        // console.log(`${channel.id} got disconnected`)
 
         //Delete this client from the object
         delete clients[channel.id]
@@ -74,9 +74,9 @@ ioServer.onConnection((channel) => {
         ioServer.emit('move')
     })
 
-    console.log(
-        `User ${channel.id} connected, there are currently ${channel?.webrtcConnection?.connections?.size} users connected`
-    )
+    // console.log(
+    //     `User ${channel.id} connected, there are currently ${channel?.webrtcConnection?.connections?.size} users connected`
+    // )
 
     const rndInt = randomIntFromInterval(-20, 20)
     const randompoint = randomSpherePoint(-150, 150, 50, 300)

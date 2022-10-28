@@ -37,7 +37,7 @@ router.use('*', (req, res) => {
 const app = express()
 app.use(router)
 const server = app.listen(process.env.PORT || 8080, () => {
-    console.log(`Listening on port http://localhost:8080...`)
+    //console.log(`Listening on port http://localhost:8080...`)
 })
 
 const ioServer = new Server(server)
@@ -46,9 +46,9 @@ let clients = {}
 
 // Socket app msgs
 ioServer.on('connection', (client) => {
-    console.log(
-        `User ${client.id} connected, there are currently ${ioServer.engine.clientsCount} users connected`
-    )
+    // console.log(
+    //     `User ${client.id} connected, there are currently ${ioServer.engine.clientsCount} users connected`
+    // )
 
     const rndInt = randomIntFromInterval(-20, 20)
     const randompoint = randomSpherePoint(-150, 150, 50, 300)
@@ -77,7 +77,7 @@ ioServer.on('connection', (client) => {
     })
 
     client.on('disconnect', () => {
-        console.log(`${client.id} got disconnected`)
+        //console.log(`${client.id} got disconnected`)
 
         //Delete this client from the object
         delete clients[client.id]

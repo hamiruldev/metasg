@@ -37,55 +37,55 @@ router.use('*', (req, res) => {
 const app = express()
 app.use(router)
 const server = app.listen(process.env.PORT || 4444, () => {
-    console.log(`Listening on port http://localhost:4444...`)
+    // console.log(`Listening on port http://localhost:4444...`)
 })
 
-const ioServer = new Server(server)
+// const ioServer = new Server(server)
 
-let clients = {}
+// let clients = {}
 
 // Socket app msgs
-ioServer.on('connection', (client) => {
-    console.log(
-        `User ${client.id} connected, there are currently ${ioServer.engine.clientsCount} users connected`
-    )
+// ioServer.on('connection', (client) => {
+// console.log(
+//     `User ${client.id} connected, there are currently ${ioServer.engine.clientsCount} users connected`
+// )
 
-    const randompoint = randomSpherePoint(-150, 150, 50, 300)
+// const randompoint = randomSpherePoint(-150, 150, 50, 300)
 
-    //Add a new client indexed by his id
-    clients[client?.id] = {
-        id: client?.id,
-        animation: false,
-        rotation: [0, 0, 0],
-        position: [randompoint[0], 200, randompoint[2]],
-    }
+//Add a new client indexed by his id
+// clients[client?.id] = {
+//     id: client?.id,
+//     animation: false,
+//     rotation: [0, 0, 0],
+//     position: [randompoint[0], 200, randompoint[2]],
+// }
 
-    ioServer.sockets.emit('move', clients)
+// ioServer.sockets.emit('move', clients)
 
-    client.on('move', ({ id, position, rotation, animation }) => {
-        clients[id].id = id
-        clients[id].position = position
-        clients[id].rotation = rotation
-        clients[id].animation = animation
+// client.on('move', ({ id, position, rotation, animation }) => {
+//     clients[id].id = id
+//     clients[id].position = position
+//     clients[id].rotation = rotation
+//     clients[id].animation = animation
 
-        ioServer.sockets.emit('move', clients)
-    })
+//     ioServer.sockets.emit('move', clients)
+// })
 
-    client.on('chat message', (data) => {
-        ioServer.sockets.emit('chat message', data)
-    })
+// client.on('chat message', (data) => {
+//     ioServer.sockets.emit('chat message', data)
+// })
 
-    client.on('disconnect', () => {
-        console.log(`${client.id} got disconnected`)
+// client.on('disconnect', () => {
+//     // console.log(`${client.id} got disconnected`)
 
-        ioServer.sockets.emit(
-            'chat message',
-            `Channel "${client.id}" got disconnected!`
-        )
+//     ioServer.sockets.emit(
+//         'chat message',
+//         `Channel "${client.id}" got disconnected!`
+//     )
 
-        //Delete this client from the object
-        delete clients[client.id]
+//     //Delete this client from the object
+//     delete clients[client.id]
 
-        ioServer.sockets.emit('move')
-    })
-})
+//     ioServer.sockets.emit('move')
+// })
+// })

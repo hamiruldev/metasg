@@ -61,15 +61,18 @@ const lists = [
         ],
     },
 ]
+// import _uniqueId from 'lodash/uniqueId'
 
+// const [id] = useState(_uniqueId('tvpanel-'))
 // GAME.JS
 const panelObj = [
     {
         name: 'Object002',
         bloom: true,
         textureFlipY: false,
-        color: 'ffffff',
+        color: '#ffffff',
         textureRotation: 360,
+        texture: '/img/test.png',
         videoTexture:
             '/video/1.SingaporeFoodFestival2022,bySingaporeTourismBoard.mp4',
     },
@@ -77,8 +80,9 @@ const panelObj = [
         name: 'Object003',
         bloom: true,
         textureFlipY: true,
-        color: 'rgba(255,255,255,0.3)',
+        color: '#ffffff',
         textureRotation: 180,
+        texture: '/img/test.png',
         videoTexture:
             '/video/2.VirtualPhDOpenHouse,bySingaporeManagementUniversity.mp4',
     },
@@ -88,6 +92,7 @@ const panelObj = [
         textureFlipY: false,
         color: '#ffffff',
         textureRotation: 360,
+        texture: '/img/test.png',
         videoTexture:
             '/video/3.IloominationVirtualShowroom,byNEAClean&GreenSingapore.mp4',
     },
@@ -97,6 +102,7 @@ const panelObj = [
         textureFlipY: true,
         color: '#ffffff',
         textureRotation: 180,
+        texture: '/img/test.png',
         videoTexture: '/video/4.BYDVirtualCarShowroom,bySTEngineering.mp4',
     },
     {
@@ -105,6 +111,7 @@ const panelObj = [
         textureFlipY: false,
         color: '#ffffff',
         textureRotation: 360,
+        texture: '/img/test.png',
         videoTexture:
             '/video/5.CuriographyVirtualExhibition,bySingaporeAssociationforMentalHealth.mp4',
     },
@@ -114,6 +121,7 @@ const panelObj = [
         textureFlipY: true,
         color: '#ffffff',
         textureRotation: 180,
+        texture: '/img/test.png',
         videoTexture:
             '/video/6.EnvironmentalAwarenessCampaign,byProcter&Gamble.mp4',
     },
@@ -123,6 +131,7 @@ const panelObj = [
         textureFlipY: false,
         color: '#ffffff',
         textureRotation: 360,
+        texture: '/img/test.png',
         videoTexture:
             '/video/7.StarPropertyAwards2022VirtualShowcase,byStarMediaGroup.mp4',
     },
@@ -132,6 +141,7 @@ const panelObj = [
         textureFlipY: true,
         color: '#ffffff',
         textureRotation: 180,
+        texture: '/img/test.png',
         videoTexture: '/video/8.SabahVirtualTravelFair,bySabahTourismBoard.mp4',
     },
     {
@@ -140,6 +150,7 @@ const panelObj = [
         textureFlipY: false,
         color: '#ffffff',
         textureRotation: 360,
+        texture: '/img/test.png',
         videoTexture:
             '/video/9.VirtualExhibition&InternationalConference,byUniversityScienceMalaysia.mp4',
     },
@@ -149,6 +160,7 @@ const panelObj = [
         textureFlipY: true,
         color: '#ffffff',
         textureRotation: 180,
+        texture: '/img/test.png',
         videoTexture: '/video/10.VirtualSalesLobbybydr.MCTbyKevolve.mp4',
     },
     {
@@ -157,6 +169,7 @@ const panelObj = [
         textureFlipY: false,
         color: '#ffffff',
         textureRotation: 360,
+        texture: '/img/test.png',
         videoTexture:
             '/video/11.VirtualStationeryStore,byNavneetEducationLimited.mp4',
     },
@@ -166,6 +179,8 @@ const panelObj = [
         textureFlipY: true,
         color: '#ffffff',
         textureRotation: 180,
+        texture: '/img/test.png',
+
         videoTexture: '/video/12.EdenVirtualWorld,EdenlogyPteLtd.mp4',
     },
     {
@@ -174,6 +189,8 @@ const panelObj = [
         textureFlipY: false,
         color: '#ffffff',
         textureRotation: 360,
+        texture: '/img/test.png',
+
         videoTexture:
             '/video/13.KualaLumpurVirtualPhotographyFestival,byPCPPublications.mp4',
     },
@@ -183,6 +200,8 @@ const panelObj = [
         textureFlipY: true,
         color: '#ffffff',
         textureRotation: 180,
+        texture: '/img/test.png',
+
         videoTexture:
             '/video/14.VirtualAngelicaShowUnite-Launching,byJohorLand.mp4',
     },
@@ -192,6 +211,8 @@ const panelObj = [
         textureFlipY: false,
         color: '#ffffff',
         textureRotation: 360,
+        texture: '/img/test.png',
+
         videoTexture:
             '/video/15.HorizonSquareVirtualShowcase,byTopHillsRealty(M)Sdn.Bhd..mp4',
     },
@@ -201,6 +222,8 @@ const panelObj = [
         textureFlipY: true,
         color: '#ffffff',
         textureRotation: 180,
+        texture: '/img/test.png',
+
         videoTexture: '/video/16.VirtualBazaar(Localised),ByTheRefectory.mp4',
     },
     {
@@ -209,6 +232,8 @@ const panelObj = [
         textureFlipY: false,
         color: '#ffffff',
         textureRotation: 360,
+        texture: '/img/test.png',
+
         videoTexture: '/video/17.VirtualBistroBar,byMemeBistroBar.mp4',
     },
 ]

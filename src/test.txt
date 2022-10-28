@@ -1,0 +1,67 @@
+
+                                            id={client?.id}
+                                            >
+                                                <HTMLMesh>
+                                                    <HTML>
+                                                        <div className="status">
+                                                            <span
+                                                                style={{
+                                                                    fontSize:
+                                                                        '12px',
+                                                                }}
+                                                            >
+                                                                {client?.id == null
+                                                                    ? 'Connecting... .'
+                                                                    : textLimit(
+                                                                          client?.id,
+                                                                          9
+                                                                      )}
+                                                            </span>
+                                                        </div>
+                                                    </HTML>
+                                                </HTMLMesh>
+    
+                                                <Sphere
+                                                    y={100.98}
+                                                    x={-14}
+                                                    opacity={1}
+                                                    bloom={true}
+                                                    color={`${
+                                                        client?.id == null
+                                                            ? '#ff0004'
+                                                            : '#00ff00'
+                                                    }`}
+                                                    emissiveColor={`${
+                                                        client?.id == null
+                                                            ? '#ff0004'
+                                                            : '#00ff00'
+                                                    }`}
+                                                    scale={0.03}
+                                                />
+                                            </Group>
+    
+                                            <Dummy
+                                                // key={key}
+                                                id={client?.id}
+                                                ref={remoteRef}
+                                                gravity={true}
+                                                physics="character"
+                                                width={50}
+                                                depth={50}
+                                                scale={1}
+                                                animation={
+                                                    client?.id == remoteData?.id &&
+                                                    client?.animation
+                                                        ? 'running'
+                                                        : 'idle'
+                                                }
+                                                src="3dCharacter/new/character.fbx"
+                                                animations={{
+                                                    idle: '3dCharacter/new/BreathingIdle.fbx',
+                                                    running:
+                                                        '3dCharacter/new/Running.fbx',
+                                                }}
+                                            />
+                                        </>
+                                    )
+                                })}*/}

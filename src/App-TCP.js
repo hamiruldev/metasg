@@ -478,7 +478,7 @@ function App() {
                                         <Group
                                             ref={remoteTextRef}
                                             y={-20}
-                                            key={key}
+                                            // key={key}
                                             id={client?.id}
                                         >
                                             <HTMLMesh>
@@ -516,7 +516,7 @@ function App() {
                                         </Group>
 
                                         <Dummy
-                                            key={key}
+                                            // key={key}
                                             id={client?.id}
                                             ref={remoteRef}
                                             gravity={true}

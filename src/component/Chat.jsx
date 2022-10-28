@@ -1,13 +1,21 @@
 import React, { useState } from 'react'
-import { Box, Stack, Typography, ListItem, ListItemButton, ListItemText } from '@mui/material'
-import { FixedSizeList } from 'react-window';
-import channel from '../../socket';
+import {
+    Box,
+    Stack,
+    Typography,
+    ListItem,
+    ListItemButton,
+    ListItemText,
+} from '@mui/material'
+import { FixedSizeList } from 'react-window'
+import channel from '../../socket'
 
 const Chat = () => {
-
     const { id } = channel
 
-    const [serverMessage, setServerMessage] = useState([{ id: id, msg: "hello from me" }])
+    const [serverMessage, setServerMessage] = useState([
+        { id: id, msg: 'hello from me' },
+    ])
 
     const appendMessage = (data) => {
         const list = document.getElementById('list')
@@ -19,7 +27,7 @@ const Chat = () => {
     }
 
     const setMessage = () => {
-        const txt = document.getElementById("text")
+        const txt = document.getElementById('text')
         const datamsg = { id: id, msg: txt.value }
         channel.emit('chat message', datamsg)
     }
@@ -34,48 +42,39 @@ const Chat = () => {
         <>
             <Box
                 sx={{
-                    width: "max-content",
-                    height: "max-content",
-                    display: "flex",
-                    justifyContent: " center",
-                    alignItems: "flex-start",
-                    position: "absolute",
-                    bottom: "2vh",
-                    right: "3vw",
-                    flexDirection: "column",
-                    backgroundColor: "black",
-                    color: "white",
-                    padding: "1%",
-                    borderRadius: "7px",
+                    width: 'max-content',
+                    height: 'max-content',
+                    display: 'flex',
+                    justifyContent: ' center',
+                    alignItems: 'flex-start',
+                    position: 'absolute',
+                    bottom: '2vh',
+                    right: '3vw',
+                    flexDirection: 'column',
+                    backgroundColor: 'black',
+                    color: 'white',
+                    padding: '1%',
+                    borderRadius: '7px',
                     mb: 2,
-                    pb: 2
+                    pb: 2,
                 }}
             >
-                <Stack direction={"column-reverse"} >
-
+                <Stack direction={'column-reverse'}>
                     <Typography variant="span">message from</Typography>
                     <ul id="list"></ul>
-
-                    {/* {serverMessage?.map((item, key) => {
-                        <>
-                            <ListItem key={key} component="div" disablePadding>
-                                <ListItemButton>
-                                    <ListItemText primary={`${item?.msg}`} />
-                                </ListItemButton>
-                            </ListItem>
-                        </>
-                    })} */}
-
-
-                    {/* <Typography variant="span">message from : {serverMessage?.msg}</Typography> */}
-
                 </Stack>
-                <Stack direction={"row"}>
+                <Stack direction={'row'}>
                     <input type="text" id="text" />
-                    <button onClick={() => { setMessage() }}>sent message</button>
+                    <button
+                        onClick={() => {
+                            setMessage()
+                        }}
+                    >
+                        sent message
+                    </button>
                 </Stack>
-
-            </Box></>
+            </Box>
+        </>
     )
 }
 
